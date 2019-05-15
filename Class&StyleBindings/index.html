@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="class">
+    <!-- Object Syntax -->
+    <div v-bind:class="{ active: isActive, 'text-danger': hasError} ">Data: isActive, hasError</div>
+    <div v-bind:class="classObject">computed: classObject</div>
+
+    <!-- Array Syntax -->
+    <div v-bind:class="[activeClass, errorClass]">Data: activeClass, errorClass</div>
+</div>
+
+<div id="style">
+    <!-- Object Syntax -->
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px'}">activeColor, fontSize</div>
+    <div v-bind:style="styleObject">styleObject</div>
+</div>
+<script src="Class.js"></script>
+<script src="Style.js"></script>
+</body>
+</html>
