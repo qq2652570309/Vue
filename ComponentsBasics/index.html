@@ -7,7 +7,61 @@
 <body>
 
 
+<!-- Base Example -->
+<!-- <div id="components-demo">
+    <button-counter></button-counter>
+</div> -->
 
-<script src="Form.js"></script>
+<!-- Reusing Components -->
+<div id="components-demo">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+</div>
+
+
+<!-- Passing Data to Child Components with Props -->
+<div id="blog-post-demo">
+    <blog-post
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:title="post.title"
+    ></blog-post>
+</div>
+
+
+<!-- Listening to Child Components Events -->
+<div id="blog-posts-events-demo">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:post="post"
+        v-on:enlarge-text="postFontSize += 0.1"
+        ></blog-post>
+    </div>
+</div>
+
+
+<!-- Emitting a Value With an Event -->
+<div id="blog-posts-events-demo2">
+    <div :style="{fontSize: postFontSize + 'em'}">
+        <blog-post
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:post="post"
+        v-on:enlarge-text="onEnlargeText"
+        ></blog-post>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="Components.js"></script>
 </body>
 </html>
